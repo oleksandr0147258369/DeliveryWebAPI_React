@@ -72,7 +72,6 @@ const EditCountry = ({id}) => {
 
 				form.setFields(fields);
 			}
-			return; // stop execution
 		}
 		else{
 			navigate('/')

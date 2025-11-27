@@ -6,11 +6,18 @@ const {Header} = Layout;
 const HeaderNav = () => {
 	const location = useLocation();
 	return (
-		<Header style={{ display: 'flex', alignItems: 'center', height: 70,            // ← increase header height
-			paddingInline: 24}}>
+		<Header
+			style={{
+				display: 'flex',
+				alignItems: 'center',
+				height: 70,
+				paddingInline: 24
+			}}
+		>
 			<Menu
-				theme={'light'}
-				mode={'horizontal'}
+				theme="light"
+				mode="horizontal"
+				selectedKeys={[location.pathname]}
 				style={{
 					flex: 1,
 					minWidth: 0,
@@ -19,15 +26,25 @@ const HeaderNav = () => {
 					display: 'flex',
 					alignItems: 'center'
 				}}
-				selectedKeys={[location.pathname]}
-			>
-				<Menu.Item key="/" >
-					<Link to="/">Home</Link>
-				</Menu.Item>
-				<Menu.Item key="/create">
-					<Link to="/create">Create</Link>
-				</Menu.Item>
-			</Menu>
+				items={[
+					{
+						key: "/",
+						label: <Link to="/">Countries</Link>
+					},
+					{
+						key: "/cities",
+						label: <Link to="/cities">Cities</Link>
+					},
+					{
+						key: "/create/country",
+						label: <Link to="/create/country">Create country</Link>
+					},
+					{
+						key: "/create/city",
+						label: <Link to="/create/city">Create city</Link>
+					}
+				]}
+			/>
 		</Header>
 	)
 }

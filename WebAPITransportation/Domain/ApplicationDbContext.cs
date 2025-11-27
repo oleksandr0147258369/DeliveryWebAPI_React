@@ -10,5 +10,6 @@ public class ApplicationDbContext : DbContext
     {
     }
     public DbSet<CountryEntity> Countries { get; set; }
-    
+    public DbSet<CityEntity> Cities { get; set; }
+
 }
