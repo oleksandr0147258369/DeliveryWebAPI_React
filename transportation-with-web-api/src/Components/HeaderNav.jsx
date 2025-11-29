@@ -1,5 +1,6 @@
 import {Menu, Layout} from "antd";
 import {Link, useLocation} from "react-router-dom";
+import GoogleLoginComponent from "./GoogleLoginComponent.jsx";
 
 const {Header} = Layout;
 
@@ -42,6 +43,10 @@ const HeaderNav = () => {
 					{
 						key: "/create/city",
 						label: <Link to="/create/city">Create city</Link>
+					},
+					{
+						key: '/login/google',
+						label: <GoogleLoginComponent/>
 					}
 				]}
 			/>
